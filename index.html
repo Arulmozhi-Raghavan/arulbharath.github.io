@@ -1,40 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Song Test</title>
+<meta charset="UTF-8">
+<title>To My Valentine Thangoo 💖</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background: linear-gradient(#ffb6c1,#ffe6f0);
+  text-align:center;
+  font-family: Arial, sans-serif;
+  overflow:hidden;
+}
+
+h1{
+  margin-top:120px;
+  font-size:40px;
+  color:#d6004f;
+}
+
+p{
+  font-size:22px;
+}
+
+button{
+  padding:16px 35px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  background:#ff3366;
+  color:white;
+  cursor:pointer;
+}
+
+/* hearts */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:26px;
+  animation: float 6s linear forwards;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-800px);opacity:0;}
+}
+</style>
 </head>
 
-<body style="background-color:pink; text-align:center; padding-top:100px;">
+<body>
 
-  <h1>💖 Click pannina Song Play aagum 💖</h1>
+<h1>To My Valentine 💖</h1>
+<p>Thangoo 😘</p>
 
-  <button onclick="playSong()" style="
-    padding:15px 30px;
-    font-size:18px;
-    border:none;
-    border-radius:20px;
-    background:red;
-    color:white;
-    cursor:pointer;
-  ">
-    ▶ Play Song
-  </button>
+<button onclick="startLove()">💗 Click Me 💗</button>
 
-  <br><br>
+<audio id="song">
+  <source src="life-of-pazham-masstamilandev_kjFtpl63.mp3" type="audio/mpeg">
+</audio>
 
-  <audio id="song">
-    <source src="life-of-pazham-masstamilandev_kjFtpl63.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+<script>
+function startLove(){
 
-  <script>
-    function playSong(){
-      const audio = document.getElementById("song");
-      audio.play();
-      alert("Song start aagudhu 🎵");
-    }
-  </script>
+  // background change
+  document.body.style.background =
+    "linear-gradient(#ff99cc,#ffffff)";
+
+  // play song
+  const song = document.getElementById("song");
+  song.play().catch(()=>{});
+
+  // hearts animation
+  setInterval(createHeart,400);
+
+  // surprise popup
+  setTimeout(()=>{
+    alert("Nee ennoda life-oda azhagana gift 💖\nForever Thangoo 🥰");
+  },1500);
+}
+
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random()*100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),6000);
+}
+</script>
 
 </body>
 </html>
+
