@@ -1,86 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>To My Valentine 💖</title>
-
-<style>
-body{
-  background: linear-gradient(#ffe6f0,#ffffff);
-  font-family: Arial, sans-serif;
-  text-align: center;
-  overflow: hidden;
-}
-
-h1{
-  margin-top: 80px;
-  font-size: 40px;
-  color: #e60073;
-}
-
-p{
-  font-size: 22px;
-}
-
-button{
-  padding: 14px 28px;
-  font-size: 18px;
-  background-color: #ff4da6;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  margin: 15px;
-}
-
-button:hover{
-  background-color: #e60073;
-}
-
-.heart{
-  position: fixed;
-  bottom: -20px;
-  font-size: 26px;
-  animation: floatUp 6s linear infinite;
-}
-
-@keyframes floatUp{
-  0%{transform: translateY(0); opacity:1;}
-  100%{transform: translateY(-800px); opacity:0;}
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Test Love Page</title>
 </head>
 
-<body>
+<body style="background:pink; text-align:center;">
 
-<h1>To My Valentine 😘</h1>
-<p>Thangoo 💙</p>
+<h1>Hello 💖</h1>
+<p>If background is pink, page is updated</p>
 
-<button onclick="startLove()">💖 Click Me 💖</button>
+<button onclick="play()">Play Song</button>
 
-<audio id="song">
+<audio id="song" controls>
   <source src="life-of-pazham-masstamilandev_kjFtpl63.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-function startLove(){
+function play(){
+  alert("Button clicked");
   document.getElementById("song").play();
-  setInterval(createHeart,500);
-  setTimeout(()=>{
-    alert("Nee ennoda life-oda azhagana surprise 💖\nForever and ever 🥰");
-  },2000);
-}
-
-function createHeart(){
-  const heart=document.createElement("div");
-  heart.className="heart";
-  heart.innerHTML="💗";
-  heart.style.left=Math.random()*100+"vw";
-  document.body.appendChild(heart);
-  setTimeout(()=>heart.remove(),6000);
 }
 </script>
 
 </body>
 </html>
-
