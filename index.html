@@ -1,27 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Test Love Page</title>
+  <title>Song Test</title>
 </head>
 
-<body style="background:pink; text-align:center;">
+<body style="background-color:pink; text-align:center; padding-top:100px;">
 
-<h1>Hello 💖</h1>
-<p>If background is pink, page is updated</p>
+  <h1>💖 Click pannina Song Play aagum 💖</h1>
 
-<button onclick="play()">Play Song</button>
+  <button onclick="playSong()" style="
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:20px;
+    background:red;
+    color:white;
+    cursor:pointer;
+  ">
+    ▶ Play Song
+  </button>
 
-<audio id="song" controls>
-  <source src="life-of-pazham-masstamilandev_kjFtpl63.mp3" type="audio/mpeg">
-</audio>
+  <br><br>
 
-<script>
-function play(){
-  alert("Button clicked");
-  document.getElementById("song").play();
-}
-</script>
+  <audio id="song">
+    <source src="life-of-pazham-masstamilandev_kjFtpl63.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function playSong(){
+      const audio = document.getElementById("song");
+      audio.play();
+      alert("Song start aagudhu 🎵");
+    }
+  </script>
 
 </body>
 </html>
